@@ -1,0 +1,54 @@
+services:
+  cache:
+    image: redis:7.2.3-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      app-tier:
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile-api
+    image: gabcares/curium-fastapi:latest
+    command: uvicorn src.api.api:app --host 0.0.0.0 --port 9000 --reload
+    volumes:
+      - src:/src
+    ports:
+      - "9000:9000"
+    env_file:
+      - path: ./src/api/.env
+        required: false
+      - path: ./.env
+        required: false
+    depends_on:
+      - cache
+    networks:
+      app-tier:
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile-streamlit
+    image: gabcares/curium-streamlit:latest
+    command: streamlit run streamlit/predict.py
+    volumes:
+      - streamlit:/streamlit
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    networks:
+      app-tier:
+
+networks:
+  app-tier:
+    driver: bridge
+
+volumes:
+  src:
+  streamlit:
+  redis_data: {}
