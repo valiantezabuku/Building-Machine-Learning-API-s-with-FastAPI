@@ -18,13 +18,7 @@ def select_model():
         choice = st.selectbox('Select a model', options=['xgboost', 'random_forest'], key='select_model')
     with col2:
         pass
-
-    # if st.session_state['selected_model'] == 'Xgboost':
-    #     pipeline = xgboost_pipeline()
-    # else:
-    #     pipeline = load_random_forest_pipeline()
-
-    # encoder = joblib.load('models/encoder.joblib')
+    
     return choice
 
 
