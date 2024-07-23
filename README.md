@@ -1,4 +1,4 @@
-# Building Machine Learning API with FastAPI to predict Sepsis 
+# Building Machine Learning API with FastAPI to Predict Sepsis
 
 This repository contains a machine learning API developed using FastAPI for predicting sepsis in ICU patients. The project follows the CRISP-DM methodology and focuses on early detection to improve patient outcomes, optimize resource allocation, and reduce healthcare costs.
 
@@ -16,13 +16,20 @@ This repository contains a machine learning API developed using FastAPI for pred
 7. [Frontend Application with Streamlit](#frontend-application-with-streamlit)
 8. [Docker Deployment](#docker-deployment)
 9. [Conclusion](#conclusion)
-10. [👥 Authors](#-authors)
-11. [⭐️ Show your support](#️-show-your-support)
-12. [🙏 Acknowledgments](#-acknowledgments)
-13. [📝 License](#-license)
+10. [Setup](#setup)
+11. [👥 Authors](#-authors)
+12. [⭐️ Show Your Support](#️-show-your-support)
+13. [🙏 Acknowledgments](#-acknowledgments)
+14. [📝 License](#-license)
 
 ## Introduction
 Building robust APIs is a cornerstone of modern software development, and FastAPI is a powerful framework that simplifies this process. This project focuses on a healthcare initiative aimed at predicting sepsis in ICU patients.
+
+## Summary
+| Project Code | Project Name | Published Article | App Link | Libraries Used |
+|--------------|--------------|-------------------|----------|----------------|
+| LP5          | Building <br> Machine <br> Learning <br> API's with <br> FastAPI | [Medium <br> Article](https://medium.com/@vezabuku/building-a-machine-learning-api-with-fastapi-04c5ea7bdbae) | [App Link](https://gabcares-team-curium.hf.space/) | Pandas <br> Numpy <br> Matplotlib <br> Seaborn <br> Sklearn |
+
 
 ## Business Understanding
 
@@ -72,18 +79,51 @@ To efficiently deploy and manage the application, Docker was used to containeriz
 ## Conclusion
 By combining the CRISP-DM methodology, FastAPI, Streamlit, and Docker, I have built, deployed, and managed a robust sepsis prediction system. Docker has been instrumental in containerizing and deploying the application, ensuring consistency across various environments. FastAPI provided a high-performance backend, while Streamlit offered an intuitive user interface, making it easy to interact with the predictive models. Together, these technologies have enabled me to create a comprehensive solution for predictive analytics in healthcare, enhancing patient outcomes and optimizing resource use.
 
-#### 👥 Authors
+## Setup
+To get started with the project, follow these steps:
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/valiantezabuku/Building-Machine-Learning-API-s-with-FastAPI.git
+    ```
+
+2. **Create and activate a virtual environment**:
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    ```
+
+3. **Install the dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Run the FastAPI server**:
+    ```bash
+    uvicorn api:app --reload
+    ```
+
+5. **Run the Streamlit frontend**:
+    ```bash
+    streamlit run app.py
+    ```
+
+6. **Docker Deployment**:
+    ```bash
+    docker-compose up --build
+    ```
+
+## 👥 Authors
 Adiru Valiant Ezabuku
 
-Email: vezabuku09@gmail.com
+- Email: vezabuku09@gmail.com
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/valiant-ezabuku/)
 
-Linkedin Account: [Linkedin](https://www.linkedin.com/in/valiant-ezabuku/)
+## ⭐️ Show Your Support
+If you like this project, kindly show some love and give it a 🌟 **STAR** 🌟
 
-#### ⭐️ Show your support
-If you like this project kindly show some love, give it a 🌟 **STAR** 🌟
-
-#### 🙏 Acknowledgments
+## 🙏 Acknowledgments
 I extend my heartfelt thanks to all my tutors at Azubi Africa and my dedicated team members for their guidance, support, and hard work throughout this project. Their expertise, insights, and collaboration significantly contributed to shaping the analysis and outcomes.
 
-#### 📝 License
+## 📝 License
 This project is [MIT](./LICENSE) licensed.
